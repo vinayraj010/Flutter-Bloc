@@ -4,14 +4,12 @@ import 'package:bloc_api_get_post/features/posts/bloc/posts_bloc.dart';
 
 class PostsPage extends StatefulWidget {
   const PostsPage({super.key});
-
   @override
   State<PostsPage> createState() => _PostsPageState();
 }
 
 class _PostsPageState extends State<PostsPage> {
   final PostsBloc postsBloc = PostsBloc();
-
   @override
   void initState() {
     postsBloc.add(PostsInitialFetchEvent());
@@ -42,7 +40,6 @@ class _PostsPageState extends State<PostsPage> {
                 );
               case PostFetchingSuccessfulState:
                 final successState = state as PostFetchingSuccessfulState;
-
                 return ListView.builder(
                   itemCount: successState.posts.length,
                   itemBuilder: (context, index) {

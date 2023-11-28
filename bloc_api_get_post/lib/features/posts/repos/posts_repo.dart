@@ -29,11 +29,12 @@ class PostsRepo {
     try {
       var response = await client
           .post(Uri.parse('https://jsonplaceholder.typicode.com/posts'), body: {
-        "title": "Flutter Teacher",
+        "title": "Flutter Teacherr",
         "body": " Bloc videos",
         "userId": "34"
       });
       if (response.statusCode >= 200 && response.statusCode < 300) {
+        print(response.statusCode);
         return true;
       } else {
         return false;
